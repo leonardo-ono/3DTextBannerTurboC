@@ -1,8 +1,15 @@
 /*
-	3D text banner.c
+	3D Text Banner
 	written by Leonardo Ono (ono.leo@gmail.com)
 	03/12/2017
+
+	target OS: DOS
+
 	compiled with turbo c
+
+	note: needs to compile with large memory model
+
+	use: tcc =ml banner.c font.c
 */
 
 #include <stdlib.h>
@@ -21,7 +28,7 @@ extern byte font[128][128];
 
 byte *VGA = (byte *) 0xa0000000;
 byte *OFFSCREEN;
-char *message = "    ABC         ";
+char *message = "    3D TEXT BANNER ... BTW, THANKS TO ALL 300+ SUBSCRIBERS !!!         ";
 
 int view_x = 0;
 

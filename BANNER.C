@@ -1,8 +1,15 @@
 /*
-	3D text banner.c
+	3D Text Banner
 	written by Leonardo Ono (ono.leo@gmail.com)
 	03/12/2017
+
+	target OS: DOS
+
 	compiled with turbo c
+
+	note: needs to compile with large memory model
+
+	use: tcc -ml banner.c font.c
 */
 
 #include <stdlib.h>
@@ -72,7 +79,7 @@ void set_pixel_3d(int x, int y, int z, byte color, int mode)
 	float nx, ny, nz;
 	int px, py;
 
-	if (mode == TEXT && color == 15)
+	if (mode == TEXT)
 	{
 		y = -20 + 5 * sin(x * 0.1 + angle);
 	}
@@ -131,7 +138,6 @@ void main()
 	set_video_mode(0x13);
 	sin_x = sin(0.9);
 	cos_x = cos(0.9);
-	clear_screen();
 	while (1)
 	{
 		angle_y = cos(angle * 0.05);
